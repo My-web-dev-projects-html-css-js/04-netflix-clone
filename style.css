@@ -89,3 +89,44 @@ a{
 
 
 /* section library */
+.library{
+    background-color: rgb(18, 18, 18);
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.7rem;
+    padding: 0.8rem 0.8rem;
+    margin: 0.6rem 0.6rem;
+
+    & .options{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        & .nav-option{
+            display: flex;
+            align-items: center;
+            gap: 1.4rem;
+
+                & img{
+                    width: 10%;
+                }
+        }
+
+        & .icons{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 1.8rem;
+            gap: 1.6rem;
+            
+            & i{
+                cursor: pointer;
+                opacity: 0.7;
+            }
+        }
+        
+    }
+}
+
+
