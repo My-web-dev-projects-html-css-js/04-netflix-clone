@@ -26,7 +26,7 @@ body{
 .sidebar{
     width: 22vw;
     height: 100vh;
-    background-color: yellowgreen;
+    background-color: black;
     
 }
 
@@ -96,7 +96,7 @@ a{
     flex-direction: column;
     border-radius: 0.7rem;
     padding: 0.8rem 0.8rem;
-    margin: 0.6rem 0.6rem;
+    margin: 0.8rem 0.6rem;
 
     & .options{
         display: flex;
@@ -129,4 +129,50 @@ a{
     }
 }
 
+
+/* library-boxes section */
+
+.library .lib-boxes{
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+
+    & .box{
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(31,31,31);
+        padding: 1.8rem;
+        line-height: 2.8rem;
+        border-radius: 0.8rem;
+        margin-top: 1.2rem;
+
+        & h1{
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        & p{
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+
+        & button{
+            width: 40%;
+            font-size: 1.3rem;
+            font-weight: 700;
+            padding: 0.8rem 2rem;
+            margin-top: 1.2rem;
+            border-radius: 2rem;
+            border: none;
+            cursor: pointer;
+        }
+    }
+
+    & .box2{
+        & button{
+            width: 44%;
+            padding: 0.8rem 1rem;
+        }
+    }
+}
 
