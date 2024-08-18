@@ -8,6 +8,10 @@
     font-family: "Montserrat", sans-serif;
 }
 
+html{
+    font-size: 62.5%;    /* 1rem = 10px */
+}
+
 body{
     background-color: black;
     color:  white;
@@ -22,15 +26,16 @@ body{
 .sidebar{
     width: 22vw;
     height: 100vh;
-    background-color: rgb(18, 18, 18);
-    border-radius: 0.8rem;
+    background-color: yellowgreen;
+    
 }
 
 .main-content{
     width: 78vw;     /* or item:1 to take rest of the space*/
     height: 100vh;
     background-color: rgb(23, 23, 23);
-    border-radius: 0.8rem;
+    border-radius: 1rem;
+    overflow: auto;
 }
 
 .music-player{
@@ -40,3 +45,47 @@ body{
     bottom: 0;
     background-color: #000;
 }
+
+
+
+/* section nav */
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.nav{
+    background-color: rgb(18, 18, 18);
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.7rem;
+    padding: 0.8rem 0.8rem;
+    margin: 0.6rem 0.6rem;
+}
+
+.nav-option{
+    line-height: 4rem;
+    opacity: 0.7;
+    font-size: 1.6rem;
+    padding: 0.8rem 1rem;
+
+    &:hover{
+        opacity: 1;
+    }
+
+    & i{
+        font-size: 1.8rem;
+        margin-left: 0.5rem;
+        margin-right: 1rem;
+    }
+    
+    & a{
+        font-weight: 500;
+    }
+    
+}
+
+
+
+/* section library */
