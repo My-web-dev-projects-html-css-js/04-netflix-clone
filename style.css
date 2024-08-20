@@ -27,14 +27,17 @@ body{
     width: 22vw;
     height: 100vh;
     background-color: black;
+    /* margin-top: 0.8rem; */
     
 }
 
 .main-content{
+    margin-top: 0.8rem;
     width: 78vw;     /* or item:1 to take rest of the space*/
     height: 100vh;
     background-color: rgb(23, 23, 23);
-    border-radius: 1rem;
+    border-radius: 0.8rem;
+    margin-right: 0.6rem;
     overflow: auto;
 }
 
@@ -56,18 +59,18 @@ a{
 
 .nav{
     background-color: rgb(18, 18, 18);
-    height: 20%;
+    height: 13%;
     display: flex;
     flex-direction: column;
     border-radius: 0.7rem;
     padding: 0.8rem 0.8rem;
-    margin: 0.6rem 0.6rem;
+    margin: 0.8rem 0.6rem 0.6rem 0.8rem;
 }
 
 .nav-option{
     line-height: 4rem;
     opacity: 0.7;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     padding: 0.8rem 1rem;
 
     &:hover{
@@ -81,7 +84,7 @@ a{
     }
     
     & a{
-        font-weight: 500;
+        font-weight: 600;
     }
     
 }
@@ -176,3 +179,94 @@ a{
     }
 }
 
+
+
+/* main content --> sticky nav */
+.main-content .sticky-nav{
+    position: sticky;
+    top: 0;
+    padding: 1.2rem 1.8rem;
+    background-color: rgb(23, 23, 23);
+
+    & .sticky-nav-line1{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.8rem 0.8rem;
+
+        & img{
+            width: 3.1rem;
+            padding: 0.7rem;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.507);
+            margin-right: 0.6rem;
+            
+        }
+
+        & .sticky-nav-options{
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            gap: 1rem;
+            width: 35%;
+
+            & .btn-premium{
+                width: 30%;
+                font-size: 1.3rem;
+                font-weight: 700;
+                padding: 0.8rem 1rem;
+                border-radius: 2rem;
+                border: none;
+                cursor: pointer;
+                
+            }
+
+            & .btn-install{  
+                background-color: rgba(0, 0, 0, 0.507);
+                color: white;
+                width: 23%;
+                font-size: 1.3rem;
+                font-weight: 600;
+                padding: 0.8rem 0.1rem;
+                border-radius: 2rem;
+                border: none;
+                cursor: pointer;
+            }
+
+            & .fa-bell, .fa-user{
+                height: 10%;
+                width: 5.8%;
+                background-color: rgba(0, 0, 0, 0.507);
+                font-size: 1.6rem;
+                border-radius: 50%;
+                padding: 0.7rem;
+                cursor: pointer;
+            }
+        }
+    }
+
+    & .sticky-nav-line2{
+        display: flex;
+        gap: 0.6rem;
+        padding-left: 1.3rem;
+
+        & :first-child{
+            background-color: white;
+            color: black;
+        }
+
+        & button{
+            background-color: rgb(54, 54, 54);
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 500;
+            padding: 0.8rem 1rem;
+            border-radius: 2rem;
+            border: none;
+            cursor: pointer;
+        }
+    }
+}
+
+
+/* main content --> card */
