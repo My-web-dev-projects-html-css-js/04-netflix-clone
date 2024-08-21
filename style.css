@@ -60,7 +60,7 @@ a{
 
 .nav{
     background-color: rgb(18, 18, 18);
-    height: 13%;
+    height: 12%;
     display: flex;
     flex-direction: column;
     border-radius: 0.7rem;
@@ -69,7 +69,7 @@ a{
 }
 
 .nav-option{
-    line-height: 4rem;
+    line-height: 3rem;
     opacity: 0.7;
     font-size: 1.5rem;
     padding: 0.8rem 1rem;
@@ -185,8 +185,9 @@ a{
 /* main content --> sticky nav */
 .main-content .sticky-nav{
     position: sticky;
+    z-index: 10;
     top: 0;
-    padding: 1.2rem 1.8rem;
+    padding: 1.5rem 1.8rem;
     background-color: rgb(23, 23, 23);
 
     & .sticky-nav-line1{
@@ -272,24 +273,35 @@ a{
 
 /* main content --> cards */
 
-.cards{
-    background-color: #000;
-    height: 70vh;
+
+
+.heading{
+    padding-top: 3rem;
+    font-size: 2.3rem;
+    font-weight: 700;
+    margin-left: 3.5rem;
 }
 
-.card-container{
+.cards-container{
     display: flex;
+    flex-wrap: wrap;
     gap: 2.5rem;
+    margin-left: 3rem;
+    margin-bottom: 2.8rem;
 }
 
 .card{
-    background-color: rgb(23, 23, 23);
     margin-top: 3rem;
     padding: 0.4rem 0.4rem 0.9rem 0.4rem;
     width: 23.7rem;
     height: 32vh;
     border-radius: 1rem;
     cursor: pointer;
+
+    &:hover{
+        
+    background-color: rgb(31, 31, 31);
+    }
 
     & img{
         width: 23rem;
@@ -315,5 +327,18 @@ a{
         padding-left: 0.6rem;
         padding-top: 0.5rem;
         padding-bottom: 2rem;
+    }
+}
+
+footer{
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+
+    & .line{
+        height: 50%;
+        width: 96%;
+        border-top: 1px solid rgb(54, 54, 54);
+        margin-top: 8rem;
     }
 }
