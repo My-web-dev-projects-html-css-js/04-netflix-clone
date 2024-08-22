@@ -46,6 +46,7 @@
                 </div>
             </section>
         </aside>
+
         <section class="main-content">
             <div class="sticky-nav">
                 <div class="sticky-nav-line1">
@@ -116,7 +117,25 @@
                 <div class="line"></div>
             </footer>
         </section>
-        <section class="music-player"></section>
+
+        <section class="music-player">
+            <div class="album"></div>
+            <div class="player">
+                <div class="player-controls">
+                    <img src="./assets/player_icon1.png" alt="" class="player-controls-icons">
+                    <img src="./assets/player_icon2.png" alt="" class="player-controls-icons">
+                    <img src="./assets/player_icon3.png" alt="" id="btn-play">
+                    <img src="./assets/player_icon4.png" alt="" class="player-controls-icons">
+                    <img src="./assets/player_icon5.png" alt="" class="player-controls-icons">
+                </div>
+                <div class="progress-bar">
+                    <span class="current-time">0:00</span>
+                    <input type="range" min="0" max="100" step="1">
+                    <span class="total-time">12.00</span>
+                </div>
+            </div>
+            <div class="controls"></div>
+        </section>
     </div>
 </body>
 </html>
