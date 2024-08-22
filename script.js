@@ -3,6 +3,7 @@ let songIndex = 0;
 let audioElement = new Audio('songs/song1.mp3');
 let masterPlay = document.getElementById('btn-play');
 let myProgressBar = document.getElementById('myProgressBar');
+let gif_playing = document.getElementById('gif-playing');
 
 
 let allSongs=[
@@ -16,11 +17,13 @@ masterPlay.addEventListener('click', ()=>{
         audioElement.play();
         masterPlay.classList.remove('fa-circle-play');    //play wala button hata do
         masterPlay.classList.add('fa-circle-pause');    //pause wala button laga do
+        gif_playing.style.opacity = 1;
     }
     else{
         audioElement.pause();
         masterPlay.classList.remove('fa-circle-pause');    //pause wala button hata do
         masterPlay.classList.add('fa-circle-play');    //play wala button laga do
+        gif_playing.style.opacity = 0;
     }
 })
 

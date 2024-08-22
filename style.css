@@ -453,6 +453,11 @@ footer{
         height: 0.3rem;
         /* margin: 0 auto; */
     }
+
+    & img{
+        width: 6%;
+        opacity: 0;
+    }
 }
 
 /* controls */
