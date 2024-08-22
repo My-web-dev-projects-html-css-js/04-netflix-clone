@@ -25,7 +25,7 @@ body{
 
 .sidebar{
     width: 22vw;
-    height: 100vh;
+    height: 96vh;
     background-color: black;
     /* margin-top: 0.8rem; */
     
@@ -34,7 +34,7 @@ body{
 .main-content{
     margin-top: 0.8rem;
     width: 78vw;     /* or item:1 to take rest of the space*/
-    height: 100vh;
+    height: 89.2vh;
     background-color: rgb(23, 23, 23);
     border-radius: 0.8rem;
     margin-right: 0.6rem;
