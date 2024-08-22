@@ -14,6 +14,13 @@ let allSongs=[
 masterPlay.addEventListener('click', ()=>{
     if(audioElement.paused || audioElement.currentTime<=0){ //agar audio pause hai ya currentTime 0 hai to play karega
         audioElement.play();
+        masterPlay.classList.remove('fa-circle-play');    //play wala button hata do
+        masterPlay.classList.add('fa-circle-pause');    //pause wala button laga do
+    }
+    else{
+        audioElement.pause();
+        masterPlay.classList.remove('fa-circle-pause');    //pause wala button hata do
+        masterPlay.classList.add('fa-circle-play');    //play wala button laga do
     }
 })
 
