@@ -345,8 +345,57 @@ footer{
 }
 
 
+
+
 /* music player */
 
+
+/*album*/
+.album{
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-left: 0.7rem;
+    
+    & .album-img{
+        width:13%;
+        /* height: 10%; */
+
+        & img{
+            width: 100%;
+            border-radius: 0.4rem;
+        }
+    }
+
+    & .album-title{
+        
+        & :first-child{
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        & :last-child{
+            font-size: 1.1rem;
+            font-weight: 500;
+            opacity: 0.7;
+            margin-top: 0.4rem;
+        }
+
+    }
+
+    & .album-icon{
+        cursor: pointer;
+        width: 4.5%;
+
+        & img{
+            width: 100%;
+        }
+    }
+}
+
+
+
+/*player*/
 .music-player{
     display: flex;
     /* background-color: aqua; */
