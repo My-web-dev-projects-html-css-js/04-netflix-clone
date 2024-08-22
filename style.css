@@ -418,7 +418,7 @@ footer{
 }
 
 .player-controls{
-    width: 22%;
+    /* width: 22%; */
     height: 8vh;
     display: flex;
     align-items: center;
@@ -451,5 +451,25 @@ footer{
         width: 100%;
         height: 0.3rem;
         /* margin: 0 auto; */
+    }
+}
+
+/* controls */
+.controls{
+    width: 22vw;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 1.4rem;
+    margin-right: 1.4rem;
+
+    & img{
+        width: 4.5%;
+        cursor: pointer;
+    }
+
+    & input{
+        height: 4%;
+        width: 20%;
     }
 }
