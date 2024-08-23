@@ -21,6 +21,21 @@ async function getSongs(){
 }
 
 
+// convert seconds to mm:ss
+function convertSecondsToTime(seconds) {
+     // Calculate minutes and seconds
+     const minutes = Math.floor(seconds / 60);
+     const remainingSeconds = parseInt((seconds % 60).toFixed(2));
+     
+     // Format minutes and seconds with leading zeros
+     const formattedMinutes = minutes.toString().padStart(2, '0');
+     const formattedSeconds = remainingSeconds.toString().padStart(2, '0');
+    
+     // Return formatted time as a string
+     return `${formattedMinutes}:${formattedSeconds}`;
+  }
+  
+
 
 let currentSong = new Audio(); 
 let play = document.getElementById('btn-play');
@@ -50,6 +65,8 @@ async function main(){
             // let audio = new Audio("songs/"+ e.querySelector('.info').innerHTML.trim());
             currentSong.src="songs/"+ e.querySelector('.info').innerHTML.trim()
             currentSong.play();
+            
+            document.querySelector(".album-title p").innerHTML = currentSong.src.split("/songs/")[1].replaceAll("%20"," "); //title update on playing the song
         })
     })
 
@@ -66,6 +83,13 @@ async function main(){
             play.classList.remove('fa-circle-pause');    //pause wala button hata do
             play.classList.add('fa-circle-play');    //play wala button laga do
         }
+    })
+
+
+    //listen for timeupdate event
+    currentSong.addEventListener('timeupdate', (e) => {
+         document.getElementById('current-time').innerHTML = convertSecondsToTime(currentSong.currentTime);
+         document.getElementById('total-time').innerHTML = convertSecondsToTime(currentSong.duration);
     })
 }
 
