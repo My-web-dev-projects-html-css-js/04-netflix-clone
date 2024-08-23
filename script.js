@@ -35,11 +35,15 @@ function convertSecondsToTime(seconds) {
      return `${formattedMinutes}:${formattedSeconds}`;
   }
   
-  
+  let songs;
+
   let currentSong = new Audio(); 
   let play = document.getElementById('btn-play');
   let myProgressBar = document.getElementById('myProgressBar');
   let gif_playing = document.getElementById('gif-playing');
+
+  let next=document.getElementById('btn-next');
+  let previous=document.getElementById('btn-previous');
   
   function playMusic(track, pause=false){
     currentSong.src ="/songs/"+ track;
@@ -54,8 +58,10 @@ function convertSecondsToTime(seconds) {
   async function main(){
     
     //get list of all the songs
-    let songs = await getSongs();
+    songs = await getSongs();
     playMusic(songs[0], true);
+
+    
     
     //show all the songs in playlist dynamically
     let songUL=document.querySelector('.box').getElementsByTagName('ul')[0];
@@ -81,7 +87,7 @@ function convertSecondsToTime(seconds) {
     })
 
 
-    //attach event listener to play, next, previous button
+    //attach event listener to play
     play.addEventListener('click', ()=>{
         if(currentSong.paused || currentSong.currentTime<=0){
             currentSong.play();
@@ -114,6 +120,25 @@ function convertSecondsToTime(seconds) {
     myProgressBar.addEventListener('change', ()=>{
         currentSong.currentTime = myProgressBar.value * currentSong.duration/100; //current time = (percentage * total time)/100
     })
+
+
+    //next button event listener
+    next.addEventListener('click', ()=>{
+        let index = songs.indexOf(currentSong.src.split("/")[4]);        
+        if((index+1) < songs.length){
+            playMusic(songs[index+1]);
+        }
+    })
+
+
+    //previous button event listener
+    previous.addEventListener('click', ()=>{
+        let index = songs.indexOf(currentSong.src.split("/")[4]);
+        if((index-1) >= 0){
+            playMusic(songs[index-1]);
+        }
+    })
+
 }
 
 main();
