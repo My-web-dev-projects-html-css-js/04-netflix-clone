@@ -38,6 +38,7 @@ function convertSecondsToTime(seconds) {
   
   let currentSong = new Audio(); 
   let play = document.getElementById('btn-play');
+  let myProgressBar = document.getElementById('myProgressBar');
   
   function playMusic(track, pause=false){
     currentSong.src ="/songs/"+ track;
@@ -97,6 +98,11 @@ function convertSecondsToTime(seconds) {
     currentSong.addEventListener('timeupdate', (e) => {
          document.getElementById('current-time').innerHTML = convertSecondsToTime(currentSong.currentTime);
          document.getElementById('total-time').innerHTML = convertSecondsToTime(currentSong.duration);
+
+         
+        // Update Seekbar (run seekbar )
+        let  progress = parseInt((currentSong.currentTime/currentSong.duration)* 100);   //percentage=(current time/total time)*100
+        myProgressBar.value = progress;
     })
 }
 
