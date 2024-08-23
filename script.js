@@ -39,17 +39,20 @@ function convertSecondsToTime(seconds) {
   let currentSong = new Audio(); 
   let play = document.getElementById('btn-play');
   
-  function playMusic(track){
+  function playMusic(track, pause=false){
     currentSong.src ="/songs/"+ track;
-    currentSong.play();
-    play.classList.remove('fa-circle-play');
-    play.classList.add('fa-circle-pause');
+    if(!pause){
+        currentSong.play();
+        play.classList.remove('fa-circle-play');
+        play.classList.add('fa-circle-pause');
+    }
   }
 
   async function main(){
     
     //get list of all the songs
     let songs = await getSongs();
+    playMusic(songs[0], true);
     
     //show all the songs in playlist dynamically
     let songUL=document.querySelector('.box').getElementsByTagName('ul')[0];
