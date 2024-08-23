@@ -23,6 +23,7 @@ async function getSongs(){
 
 
 let currentSong = new Audio(); 
+let play = document.getElementById('btn-play');
 
 async function main(){
     
@@ -50,6 +51,21 @@ async function main(){
             currentSong.src="songs/"+ e.querySelector('.info').innerHTML.trim()
             currentSong.play();
         })
+    })
+
+
+    //attach event listener to play, next, previous button
+    play.addEventListener('click', ()=>{
+        if(currentSong.paused || currentSong.currentTime<=0){
+            currentSong.play();
+            play.classList.remove('fa-circle-play');    //play wala button hata do
+            play.classList.add('fa-circle-pause');    //pause wala button laga do
+            
+        }else{
+            currentSong.pause();
+            play.classList.remove('fa-circle-pause');    //pause wala button hata do
+            play.classList.add('fa-circle-play');    //play wala button laga do
+        }
     })
 }
 
