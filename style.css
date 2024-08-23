@@ -166,8 +166,12 @@ a{
                 font-weight: 500;
                 padding: 1.2rem;
                 margin-top: 1.2rem;
-                border: 2px solid rgb(124, 115, 115);
-                border-radius: 1rem;
+                border: 1px solid rgb(124, 115, 115);
+                border-radius: 0.8rem;
+
+                &:hover{
+                    background-color: rgb(23, 23, 23);
+                }
 
                 & div{
                     width: 65%;
@@ -175,6 +179,12 @@ a{
 
                 & i{
                     font-size: 1.5rem;
+                }
+
+                & span{
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    cursor: pointer;
                 }
             }
         }

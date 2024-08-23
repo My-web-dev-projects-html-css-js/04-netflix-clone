@@ -20,37 +20,37 @@ async function getSongs(){
     return songs;
 }
 
+
+
+let currentSong = new Audio(); 
+
 async function main(){
+    
     //get list of all the songs
     let songs = await getSongs();
-    console.log(songs);
-
-    //add songs to playlist dynamically
+    
+    //show all the songs in playlist dynamically
     let songUL=document.querySelector('.box').getElementsByTagName('ul')[0];
     for (const song of songs) {
         songUL.innerHTML=songUL.innerHTML+`
                                             <li>
                                                 <i class="fa-solid fa-music"></i>
-                                                <div>${song.replaceAll("%20"," ")}</div>
+                                                <div class="info">${song.replaceAll("%20"," ")}</div>
                                                 <span>Play now</span>
                                                 <i class="fa-solid fa-circle-play"></i>
                                             </li>
         `
-        // songUL.innerHTML=songUL.innerHTML+`<li><a href="${song}">${song.replaceAll("%20"," ")}</a></li>`
     }
 
 
-
-    //play first song
-    let audioElement = new Audio(songs[0]);
-    audioElement.play();
-
-    audioElement.addEventListener("loadeddata", ()=>{
-        console.log(audioElement.duration);
-        console.log(audioElement.currentTime);
-        console.log(audioElement.currentSrc);       
-    
-    }) 
+    //attach an event listener to each song
+    Array.from(document.querySelector(".box").getElementsByTagName("li")).forEach((e)=>{
+        e.addEventListener('click', ()=>{
+            // let audio = new Audio("songs/"+ e.querySelector('.info').innerHTML.trim());
+            currentSong.src="songs/"+ e.querySelector('.info').innerHTML.trim()
+            currentSong.play();
+        })
+    })
 }
 
 main();
@@ -89,8 +89,8 @@ main();
 
 
 
-/* way-1
-
+/* way-1*/
+/*
 // Initialize the Variables
 let songIndex = 0;
 let audioElement = new Audio('songs/song1.mp3');
