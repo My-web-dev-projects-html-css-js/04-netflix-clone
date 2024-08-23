@@ -22,7 +22,7 @@ async function getSongs(){
 
 
 // convert seconds to mm:ss
-function convertSecondsToTime(seconds) {
+  function convertSecondsToTime(seconds) {
      // Calculate minutes and seconds
      const minutes = Math.floor(seconds / 60);
      const remainingSeconds = parseInt((seconds % 60).toFixed(2));

@@ -171,6 +171,7 @@ a{
                 align-items: center;
                 gap: 1rem;
                 width: 98%;
+                height: 9%;
                 list-style: none;
                 font-size: 1.2rem;
                 font-weight: 500;
@@ -181,7 +182,7 @@ a{
                 line-height: 1.5rem;
 
                 &:hover{
-                    background-color: rgb(23, 23, 23);
+                    background-color: rgb(10, 10, 10);
                 }
 
                 & div{
