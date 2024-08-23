@@ -1,3 +1,71 @@
+
+/*way-2 */
+async function getSongs(){
+    
+    let a = await fetch("http://127.0.0.1:3000/songs/");
+    let res = await a.text(); //page ki html fetch ho jaegi
+    // console.log(res);
+
+    let divElement = document.createElement('div');
+    divElement.innerHTML = res;
+    let anchors = divElement.querySelectorAll('a');
+
+    let songs=[];
+    for (let i = 0; i < anchors.length; i++) {
+        const element = anchors[i];
+        if(element.href.endsWith(".mp3")){
+            songs.push(element.href);
+        }        
+    }
+    return songs;
+    
+    
+}
+
+async function main(){
+    let songs = await getSongs();
+    console.log(songs);
+}
+
+main();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* way-1
+
 // Initialize the Variables
 let songIndex = 0;
 let audioElement = new Audio('songs/song1.mp3');
@@ -32,12 +100,16 @@ audioElement.addEventListener('timeupdate', (e) => {
     console.log('timeupdate');
 
     // Update Seekbar (run seekbar )
-    progress = parseInt((audioElement.currentTime/audioElement.duration)* 100);
+    progress = parseInt((audioElement.currentTime/audioElement.duration)* 100);   //percentage=(current time/total time)*100
     myProgressBar.value = progress;
+    
 })
 
+
+//jab seekbar ke bich me click kre to song time update ho jayega
 myProgressBar.addEventListener('change', ()=>{
-    audioElement.currentTime = myProgressBar.value * audioElement.duration/100;
+    audioElement.currentTime = myProgressBar.value * audioElement.duration/100; //current time = (percentage * total time)/100
 })
 
 
+*/
