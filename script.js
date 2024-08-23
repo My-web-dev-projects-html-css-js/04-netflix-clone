@@ -127,6 +127,7 @@ function convertSecondsToTime(seconds) {
         let index = songs.indexOf(currentSong.src.split("/")[4]);        
         if((index+1) < songs.length){
             playMusic(songs[index+1]);
+            document.querySelector(".album-title p").innerHTML = currentSong.src.split("/songs/")[1].replaceAll("%20"," "); //title update on playing the song
         }
     })
 
@@ -136,6 +137,7 @@ function convertSecondsToTime(seconds) {
         let index = songs.indexOf(currentSong.src.split("/")[4]);
         if((index-1) >= 0){
             playMusic(songs[index-1]);
+            document.querySelector(".album-title p").innerHTML = currentSong.src.split("/songs/")[1].replaceAll("%20"," "); //title update on playing the song
         }
     })
 
