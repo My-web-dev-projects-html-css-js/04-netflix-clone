@@ -141,6 +141,13 @@ function convertSecondsToTime(seconds) {
         }
     })
 
+
+    //add an event listener to volume
+    let volume = document.getElementById('volume');
+    volume.addEventListener('change', (e)=>{
+        currentSong.volume = parseInt(e.target.value)/100;
+    })
+
 }
 
 main();
