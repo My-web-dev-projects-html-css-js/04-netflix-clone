@@ -39,6 +39,7 @@ function convertSecondsToTime(seconds) {
   let currentSong = new Audio(); 
   let play = document.getElementById('btn-play');
   let myProgressBar = document.getElementById('myProgressBar');
+  let gif_playing = document.getElementById('gif-playing');
   
   function playMusic(track, pause=false){
     currentSong.src ="/songs/"+ track;
@@ -46,6 +47,7 @@ function convertSecondsToTime(seconds) {
         currentSong.play();
         play.classList.remove('fa-circle-play');
         play.classList.add('fa-circle-pause');
+        gif_playing.style.opacity = 1;
     }
   }
 
@@ -85,11 +87,13 @@ function convertSecondsToTime(seconds) {
             currentSong.play();
             play.classList.remove('fa-circle-play');    //play wala button hata do
             play.classList.add('fa-circle-pause');    //pause wala button laga do
+            gif_playing.style.opacity = 1;
             
         }else{
             currentSong.pause();
             play.classList.remove('fa-circle-pause');    //pause wala button hata do
             play.classList.add('fa-circle-play');    //play wala button laga do
+            gif_playing.style.opacity = 0;
         }
     })
 
@@ -117,6 +121,28 @@ main();
 
 
 
+
+/*responsive design*/
+console.log("hi");
+
+let sidebar = document.querySelector(".sidebar");
+let hamburger = document.querySelector("#hamburger");
+let btncross = document.querySelector(".fa-xmark");
+
+console.log(sidebar.style);
+
+hamburger.addEventListener('click', ()=>{
+    sidebar.style.left = "0";
+    sidebar.style.zIndex = 23;
+    sidebar.style.transition = "0.6s";
+    btncross.style.display = "block";
+})
+
+btncross.addEventListener('click', ()=>{
+    sidebar.style.left = "-100%";
+    sidebar.style.zIndex = 0;
+    btncross.style.display = "none";
+})
 
 
 

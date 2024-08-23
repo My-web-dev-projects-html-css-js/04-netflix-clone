@@ -12,9 +12,12 @@
     <div class="main">
         <aside class="sidebar">
             <section class="nav">
-                <div class="nav-option" style="opacity: 1;">
-                    <i class="fa-solid fa-house"></i>
-                    <a href="">Home</a>
+                <div class="nav-option home-option" style="opacity: 1;">
+                    <div>
+                        <i class="fa-solid fa-house"></i>
+                        <a href="">Home</a>
+                    </div>
+                    <i class="fa-solid fa-xmark"></i>
                 </div>
                 <div class="nav-option">
                     <i class="fa-solid fa-magnifying-glass"></i>
@@ -51,6 +54,7 @@
             <div class="sticky-nav">
                 <div class="sticky-nav-line1">
                     <div class="sticky-nav-arrows">
+                        <i class="fa-solid fa-bars" id="hamburger"></i>
                         <img src="./assets/backward_icon.png" alt="">
                         <img src="./assets/forward_icon.png" alt="">
                     </div>
@@ -121,7 +125,7 @@
         <section class="music-player">
             <div class="album">
                 <div class="album-img">
-                    <img src="./assets/card1img.jpeg" alt="">
+                    <img src="./assets/playing.gif" alt="" id="gif-playing">
                 </div>
                 <div class="album-title">
                     <p></p>  
@@ -142,7 +146,6 @@
                     <span id="current-time"></span>
                     <input type="range" min="0" max="100" step="1" value="0" id="myProgressBar">
                     <span id="total-time"></span>
-                    <img src="./assets/playing.gif" alt="" id="gif-playing">
                 </div>
             </div>
             <div class="controls">

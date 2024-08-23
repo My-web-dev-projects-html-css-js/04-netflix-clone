@@ -91,6 +91,16 @@ a{
     
 }
 
+.home-option{
+    display: flex;
+    justify-content: space-between;
+
+    & .fa-xmark{
+        font-size: 2.2rem;
+        display: none;
+    }
+}
+
 
 
 /* section library */
@@ -282,6 +292,9 @@ a{
     }
 }
 
+.sticky-nav-arrows i{
+    display: none;
+}
 
 /* main content --> cards */
 
@@ -369,12 +382,13 @@ footer{
     margin-left: 0.7rem;
     
     & .album-img{
-        width:13%;
+        width:23%;
         /* height: 10%; */
 
         & img{
             width: 100%;
             border-radius: 0.4rem;
+            opacity: 0;
         }
     }
 
@@ -498,5 +512,40 @@ footer{
     & input{
         height: 4%;
         width: 20%;
+    }
+}
+
+
+
+
+
+
+/*responsive design*/
+@media screen and (max-width: 1400px){
+    .btn-premium{
+        display: none;
+    }
+
+    .sidebar{
+        position: relative;
+        left: -35rem;
+    }
+
+    .main-content{
+        position: absolute;
+        left: 0.7rem;
+        width: 99%;
+        margin: 0.5rem auto;
+    }
+
+    .sticky-nav-arrows img{
+        display: none;
+    }
+
+    .sticky-nav-arrows i{
+        display: inline-block;
+        margin-left: 1rem;
+        margin-bottom: 1rem;
+        font-size: 3rem;
     }
 }
