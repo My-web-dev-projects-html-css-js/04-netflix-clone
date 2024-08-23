@@ -24,7 +24,7 @@ body{
 
 
 .sidebar{
-    width: 22vw;
+    width: 25%;
     height: 96vh;
     background-color: black;
     /* margin-top: 0.8rem; */
@@ -162,10 +162,10 @@ a{
         }
 
         & button{
-            width: 40%;
-            font-size: 1.3rem;
+            width: 15rem;
+            /* font-size: 1.3rem; */
             font-weight: 700;
-            padding: 0.8rem 2rem;
+            padding: 0.8rem 0.6rem;
             margin-top: 1.2rem;
             border-radius: 2rem;
             border: none;
@@ -175,7 +175,7 @@ a{
 
     & .box2{
         & button{
-            width: 44%;
+            width: 17rem;
             padding: 0.8rem 1rem;
         }
     }
@@ -214,7 +214,7 @@ a{
             width: 35%;
 
             & .btn-premium{
-                width: 30%;
+                width: 14rem;
                 font-size: 1.3rem;
                 font-weight: 700;
                 padding: 0.8rem 1rem;
@@ -227,7 +227,7 @@ a{
             & .btn-install{  
                 background-color: rgba(0, 0, 0, 0.507);
                 color: white;
-                width: 23%;
+                width: 14rem;
                 font-size: 1.3rem;
                 font-weight: 600;
                 padding: 0.8rem 0.1rem;

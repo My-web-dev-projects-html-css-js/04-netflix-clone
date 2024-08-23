@@ -1,5 +1,6 @@
 
 /*way-2 */
+/*
 async function getSongs(){
     
     let a = await fetch("http://127.0.0.1:3000/songs/");
@@ -23,12 +24,26 @@ async function getSongs(){
 }
 
 async function main(){
+    //get list of all the songs
     let songs = await getSongs();
     console.log(songs);
+
+    //play first song
+    let audioElement = new Audio(songs[0]);
+    audioElement.play();
+
+    audioElement.addEventListener("loadeddata", ()=>{
+        console.log(audioElement.duration);
+        console.log(audioElement.currentTime);
+        console.log(audioElement.currentSrc);
+        
+        
+    
+    }) 
 }
 
 main();
-
+*/
 
 
 
