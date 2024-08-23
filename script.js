@@ -35,12 +35,18 @@ function convertSecondsToTime(seconds) {
      return `${formattedMinutes}:${formattedSeconds}`;
   }
   
+  
+  let currentSong = new Audio(); 
+  let play = document.getElementById('btn-play');
+  
+  function playMusic(track){
+    currentSong.src ="/songs/"+ track;
+    currentSong.play();
+    play.classList.remove('fa-circle-play');
+    play.classList.add('fa-circle-pause');
+  }
 
-
-let currentSong = new Audio(); 
-let play = document.getElementById('btn-play');
-
-async function main(){
+  async function main(){
     
     //get list of all the songs
     let songs = await getSongs();
@@ -55,16 +61,14 @@ async function main(){
                                                 <span>Play now</span>
                                                 <i class="fa-solid fa-circle-play"></i>
                                             </li>
-        `
+                                        `
     }
 
 
     //attach an event listener to each song
     Array.from(document.querySelector(".box").getElementsByTagName("li")).forEach((e)=>{
         e.addEventListener('click', ()=>{
-            // let audio = new Audio("songs/"+ e.querySelector('.info').innerHTML.trim());
-            currentSong.src="songs/"+ e.querySelector('.info').innerHTML.trim()
-            currentSong.play();
+            playMusic(e.querySelector('.info').innerHTML.trim())
             
             document.querySelector(".album-title p").innerHTML = currentSong.src.split("/songs/")[1].replaceAll("%20"," "); //title update on playing the song
         })
