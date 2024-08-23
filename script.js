@@ -104,6 +104,12 @@ function convertSecondsToTime(seconds) {
         let  progress = parseInt((currentSong.currentTime/currentSong.duration)* 100);   //percentage=(current time/total time)*100
         myProgressBar.value = progress;
     })
+
+
+    //jab seekbar ke bich me click kre to song time update ho jayega
+    myProgressBar.addEventListener('change', ()=>{
+        currentSong.currentTime = myProgressBar.value * currentSong.duration/100; //current time = (percentage * total time)/100
+    })
 }
 
 main();
