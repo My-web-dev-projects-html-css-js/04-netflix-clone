@@ -157,13 +157,11 @@ main();
 
 
 /*responsive design*/
-console.log("hi");
 
 let sidebar = document.querySelector(".sidebar");
 let hamburger = document.querySelector("#hamburger");
 let btncross = document.querySelector(".fa-xmark");
 
-console.log(sidebar.style);
 
 hamburger.addEventListener('click', ()=>{
     sidebar.style.left = "0";
