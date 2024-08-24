@@ -299,6 +299,8 @@ a{
 
 .sticky-nav-arrows i{
     display: none;
+    cursor: pointer;
+    
 }
 
 /* main content --> cards */
