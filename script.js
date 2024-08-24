@@ -179,6 +179,37 @@ btncross.addEventListener('click', ()=>{
 
 
 
+/*spotify play button*/
+let card = document.querySelectorAll('.card');
+
+for(let i=0;i<card.length;i++){
+    let createElement = document.createElement('img');
+    createElement.src = './assets/spotify-play-button.png';
+    
+    createElement.style.width = '36%';
+    createElement.style.height = '26%';
+    createElement.style.position = 'relative';
+    createElement.style.top = '-55%';
+    createElement.style.left = '65%';
+    createElement.style.zIndex=2;
+    createElement.style.transition = '0.5s';
+    createElement.style.opacity = 0;	
+
+    card[i].appendChild(createElement);  
+
+    //hover effect
+    card[i].addEventListener('mouseover', () => {
+        createElement.style.opacity = 1;
+    });
+    
+    card[i].addEventListener('mouseout', () => {
+        createElement.style.opacity = 0;
+    });
+}
+
+    
+
+
 
 
 
